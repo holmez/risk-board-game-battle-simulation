@@ -24,8 +24,8 @@ class RiskBattleSimulator:
         """Keep rolling the dice until either you've conquered the territory or are out."""
         assert (0 <= attacker_dice_count and 0 <= defender_dice_count)
 
-        while attacker_dice_count > 0 and defender_dice_count > 0:
-            attack_with = min(3, attacker_dice_count)
+        while attacker_dice_count > 1 and defender_dice_count > 0:
+            attack_with = min(3, attacker_dice_count-1)
             defend_with = min(2, defender_dice_count)
 
             attack_res, defend_res = self._simulate_one_throw(attack_with, defend_with)
